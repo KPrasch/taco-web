@@ -73,7 +73,7 @@ describe('TACo Signing', () => {
       expect(signUserOpMock).toHaveBeenCalledWith(
         {
           '0x5678': btoa(JSON.stringify({
-            user_op: pythonUserOp,
+            user_op: JSON.stringify(pythonUserOp),
             aa_version: aaVersion,
             cohort_id: cohortId,
             chain_id: chainId,
@@ -81,7 +81,7 @@ describe('TACo Signing', () => {
             signature_type: "userop"
           })),
           '0xefgh': btoa(JSON.stringify({
-            user_op: pythonUserOp,
+            user_op: JSON.stringify(pythonUserOp),
             aa_version: aaVersion,
             cohort_id: cohortId,
             chain_id: chainId,
@@ -138,7 +138,7 @@ describe('TACo Signing', () => {
       expect(signUserOpMock).toHaveBeenCalledWith(
         {
           '0x5678': btoa(JSON.stringify({
-            user_op: pythonUserOp2,
+            user_op: JSON.stringify(pythonUserOp2),
             aa_version: aaVersion,
             cohort_id: cohortId,
             chain_id: chainId,
@@ -146,7 +146,7 @@ describe('TACo Signing', () => {
             signature_type: "userop"
           })),
           '0xefgh': btoa(JSON.stringify({
-            user_op: pythonUserOp2,
+            user_op: JSON.stringify(pythonUserOp2),
             aa_version: aaVersion,
             cohort_id: cohortId,
             chain_id: chainId,

@@ -32,7 +32,7 @@ export class UserOperationSignatureRequest {
 
   toBytes(): Uint8Array {
     const data = {
-      user_op: this.userOp,
+      user_op: JSON.stringify(this.userOp),
       aa_version: this.aaVersion,
       cohort_id: this.cohortId,
       chain_id: this.chainId,
