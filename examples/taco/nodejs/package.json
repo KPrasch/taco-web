@@ -7,7 +7,7 @@
   "scripts": {
     "check": "pnpm type-check",
     "start": "ts-node src/index.ts",
-    "sign": "ts-node src/benchmark-signing.ts",
+    "sign": "ts-node src/sign.ts",
     "bench": "ts-node src/bench-porter-vs-direct.ts",
     "type-check": "tsc"
   },
