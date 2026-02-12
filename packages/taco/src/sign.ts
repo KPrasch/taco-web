@@ -171,17 +171,7 @@ export async function signUserOp(
     : await getPorterUris(domain);
   const porter = new PorterClient(porterUrisFull);
 
-  const signers = await SigningCoordinatorAgent.getParticipants(
-    provider,
-    domain,
-    cohortId,
-  );
-
-  const threshold = await SigningCoordinatorAgent.getThreshold(
-    provider,
-    domain,
-    cohortId,
-  );
+  const { signers, threshold } = await getOrFetchCohort(provider, domain, cohortId);
 
   const { sharedSecrets, encryptedRequests } = await makeSigningRequests(
     cohortId,

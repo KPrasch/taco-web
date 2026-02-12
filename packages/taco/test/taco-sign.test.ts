@@ -26,7 +26,7 @@ import { ContractCondition } from '../src/conditions/base/contract';
 import { RpcCondition } from '../src/conditions/base/rpc';
 import { CompoundCondition } from '../src/conditions/compound-condition';
 import { ConditionExpression } from '../src/conditions/condition-expr';
-import { setSigningCohortConditions, signUserOp } from '../src/sign';
+import { clearSigningCaches, setSigningCohortConditions, signUserOp } from '../src/sign';
 
 import { mockMakeSessionKey } from './test-utils';
 
@@ -154,6 +154,7 @@ describe('TACo Signing', () => {
   let signerStaticKeys: Record<string, SessionStaticKey>;
 
   beforeEach(() => {
+    clearSigningCaches();
     porterSignUserOpMock = vi.fn();
     mockProvider = {} as ethers.providers.Provider;
 
