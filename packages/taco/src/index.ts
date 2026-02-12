@@ -16,7 +16,9 @@ export * as conditions from './conditions';
 export {
   SignResult,
   TacoSignature,
+  preheatSigningCohort,
   setSigningCohortConditions,
   signUserOp,
+  signUserOpDirect,
 } from './sign';
 export { decrypt, encrypt, encryptWithPublicKey } from './taco';
